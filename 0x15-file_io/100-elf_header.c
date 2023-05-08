@@ -7,14 +7,9 @@
 #include <stdlib.h>
 void check_elf(unsigned char *p_ident);
 void print_magic(unsigned char *p_ident);
-void print_class(unsigned char *p_ident);
-void print_data(unsigned char *p_ident);
 void print_version(unsigned char *p_ident);
-void print_abi(unsigned char *p_ident);
 void print_osabi(unsigned char *p_ident);
 void print_type(unsigned int p_type, unsigned char *p_ident);
-void print_entry(unsigned long int p_entry, unsigned char *p_ident);
-void close_elf(int elf);
 
 /**
  * check_elf - Checks if a file is an ELF file.
