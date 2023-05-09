@@ -10,7 +10,6 @@ void print_magic(unsigned char *p_ident);
 void print_version(unsigned char *p_ident);
 void print_osabi(unsigned char *p_ident);
 void print_type(unsigned int p_type, unsigned char *p_ident);
-
 /**
  * check_elf - Checks if a file is an ELF file.
  * @p_ident: A pointer to an array containing the ELF magic numbers.
@@ -33,7 +32,6 @@ void check_elf(unsigned char *p_ident)
 		}
 	}
 }
-
 /**
  * print_magic - Prints the magic numbers of an ELF header.
  * @p_ident: A pointer to an array containing the ELF magic numbers.
@@ -56,7 +54,6 @@ void print_magic(unsigned char *p_ident)
 			printf(" ");
 	}
 }
-
 /**
  * print_version - Prints the version of an ELF header.
  * @p_ident: A pointer to an array containing the ELF version.
@@ -120,7 +117,6 @@ void print_osabi(unsigned char *p_ident)
 		printf("<unknown: %x>\n", p_ident[EI_OSABI]);
 	}
 }
-
 /**
  * print_type - Prints the type of an ELF header.
  * @p_type: The ELF type.
@@ -154,7 +150,6 @@ void print_type(unsigned int p_type, unsigned char *p_ident)
 		printf("<unknown: %x>\n", p_type);
 	}
 }
-
 /**
  * main - Displays the information contained in the
  *        ELF header at the start of an ELF file.
@@ -196,14 +191,9 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	check_elf(header->p_ident);
 	printf("ELF Header:\n");
 	print_magic(header->p_ident);
-	print_class(header->p_ident);
-	print_data(header->p_ident);
 	print_version(header->p_ident);
 	print_osabi(header->p_ident);
-	print_abi(header->p_ident);
 	print_type(header->p_type, header->p_ident);
-	print_entry(header->p_entry, header->p_ident);
-
 	free(header);
 	close_elf(o);
 	return (0);
