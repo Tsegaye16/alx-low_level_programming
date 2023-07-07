@@ -24,4 +24,4 @@ while (node != NULL)
 
 	node = node->next;
 }
-return (NULL
+return (NULL)
