@@ -2,7 +2,7 @@
 
 /**
  * print_dlistint - the function thatprints all the elements
- * 	of doubly linked list
+ *	of doubly linked list
  * @h: pointer to head of the dlistint_t list
  * Return: number of nodes of dlistint_t list
  */
